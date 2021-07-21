@@ -9,7 +9,7 @@ RUN apk add --no-cache gcc musl-dev linux-headers git
 
 WORKDIR /go-ethereum
 
-COPY ../go-ethereum-1.10.5/ /go-ethereum/
+COPY go-ethereum-1.10.5/ /go-ethereum/
 RUN go run build/ci.go install ./cmd/bootnode
 
 # 生成镜像
@@ -23,7 +23,7 @@ ARG workdir=/bootnode
 
 WORKDIR ${workdir}
 
-COPY ./boot.key ${workdir}/
+COPY bootnode/boot.key ${workdir}/
 
 EXPOSE 30301 30301/udp
 

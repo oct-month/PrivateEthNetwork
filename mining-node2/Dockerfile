@@ -9,7 +9,7 @@ RUN apk add --no-cache gcc musl-dev linux-headers git
 
 WORKDIR /go-ethereum
 
-COPY ../go-ethereum-1.10.5/ /go-ethereum/
+COPY go-ethereum-1.10.5/ /go-ethereum/
 RUN go run build/ci.go install ./cmd/geth
 
 # 生成镜像
@@ -23,7 +23,7 @@ ARG workdir=/geth-node
 
 WORKDIR ${workdir}
 
-COPY ./ ${workdir}/
+COPY mining-node2/ ${workdir}/
 
 EXPOSE 8545 8546 30303 30303/udp
 

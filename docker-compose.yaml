@@ -7,37 +7,49 @@ networks:
 
 services:
   eth-bootnode:
-    build: ./bootnode/
+    build:
+      context: ./
+      dockerfile: bootnode/Dockerfile
     image: sun/bootnode:latest
     container_name: bootnode
     restart: on-failure
 
   eth-miner1:
-    build: ./mining-node1/
+    build:
+      context: ./
+      dockerfile: mining-node1/Dockerfile
     image: sun/mining-node1:latest
     container_name: eth-miner1
     restart: on-failure
 
   eth-miner2:
-    build: ./mining-node2/
+    build:
+      context: ./
+      dockerfile: mining-node2/Dockerfile
     image: sun/mining-node2:latest
     container_name: eth-miner2
     restart: on-failure
 
   eth-miner3:
-    build: ./mining-node3/
+    build:
+      context: ./
+      dockerfile: mining-node3/Dockerfile
     image: sun/mining-node3:latest
     container_name: eth-miner3
     restart: on-failure
 
   eth-member1:
-    build: ./member-node/
+    build:
+      context: ./
+      dockerfile: member-node/Dockerfile
     image: sun/member-node:latest
     container_name: eth-member1
     restart: on-failure
 
   eth-member2:
-    build: ./member-node/
+    build:
+      context: ./
+      dockerfile: member-node/Dockerfile
     image: sun/member-node:latest
     container_name: eth-member2
     restart: on-failure
