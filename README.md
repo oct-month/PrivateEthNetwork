@@ -40,6 +40,7 @@ clique.propose('0x地址', true)
 
 ## 踩坑
 
+- `win10`和`Linux`的换行符不同，`win10`是`\r\n`，`Linux`是`\n`。因此`win10`下的部署可能会因此有问题。
 - `bootnode`节点中输出的`enode`不太对，要改对应的`ip`。
 - 成员节点也需要有账户，不然会报`err="etherbase must be explicitly specified"`错误。
 - 每个节点都有一个`nodekey`，存储在`data/geth/nodekey`中，用于区分不同节点，不能相同。
