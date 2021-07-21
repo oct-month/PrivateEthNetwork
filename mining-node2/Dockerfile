@@ -27,6 +27,6 @@ COPY mining-node2/ ${workdir}/
 
 EXPOSE 8545 8546 30303 30303/udp
 
-ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["sh", "run.sh"]
 
 LABEL maintainer="sun oct-month@qq.com"

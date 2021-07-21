@@ -21,6 +21,8 @@ services:
     image: sun/mining-node1:latest
     container_name: eth-miner1
     restart: on-failure
+    depends_on: 
+      - eth-bootnode
 
   eth-miner2:
     build:
@@ -29,6 +31,8 @@ services:
     image: sun/mining-node2:latest
     container_name: eth-miner2
     restart: on-failure
+    depends_on: 
+      - eth-bootnode
 
   eth-miner3:
     build:
@@ -37,6 +41,8 @@ services:
     image: sun/mining-node3:latest
     container_name: eth-miner3
     restart: on-failure
+    depends_on: 
+      - eth-bootnode
 
   eth-member1:
     build:
@@ -45,6 +51,8 @@ services:
     image: sun/member-node:latest
     container_name: eth-member1
     restart: on-failure
+    depends_on: 
+      - eth-bootnode
 
   eth-member2:
     build:
@@ -53,3 +61,5 @@ services:
     image: sun/member-node:latest
     container_name: eth-member2
     restart: on-failure
+    depends_on: 
+      - eth-bootnode
