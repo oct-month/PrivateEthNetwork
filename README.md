@@ -33,3 +33,12 @@ clique.propose('0x地址', true)
 ```
 
 以提名新的挖矿节点。
+
+## 踩坑
+
+- `bootnode`节点中输出的`enode`不太对，要改对应的`ip`。
+- 成员节点也需要有账户，不然会报`err="etherbase must be explicitly specified"`错误。
+- 每个节点都有一个`nodekey`，存储在`data/geth/nodekey`中，用于区分不同节点，不能相同。
+- `Clique`系统中，挖矿节点必须`unlock`账户才能打包区块。
+- `genesis.json`中的`extraData`记录了初始的可记账节点，必须把对应的账户填入。
+- 挖矿节点必须至少存在一个，这样创世区块才能打包，不然会报`Dropping unsynced node during sync`错误。
