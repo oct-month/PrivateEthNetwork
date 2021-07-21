@@ -1,1 +1,0 @@
-geth  --datadir=data --bootnodes=enode://c2606d9b5056a7ce05ca516d2cb3ebabbcd7189f2183a22fda4ea74d489836056cd583e3668efb27a2d882ca2d9ee5975705ade3059cd7b6d015521c1cbedd82@ubuntu1:30301 --networkid=201807247 --mine --miner.threads=1 --miner.etherbase=0x6d0ae5939db75633810a03da2bc9cb2ec0f12fef
