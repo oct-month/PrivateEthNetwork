@@ -6,6 +6,8 @@
 docker-compose up -d --build
 ```
 
+如果有节点异常卡住，使用`docker restart 容器名`即可。
+
 ## 说明
 
 ### 网络结构
@@ -17,6 +19,8 @@ docker-compose up -d --build
 - 2个`member-node`，即普通记账节点，不挖矿
 
 共识算法使用`Clique`权威证明，只有经过授权的“签名者”才能创建新块。
+
+每15秒出一个新块。
 
 ### 创世区块
 
@@ -32,7 +36,7 @@ docker-compose up -d --build
 clique.propose('0x地址', true)
 ```
 
-以提名新的挖矿节点。
+以提名新的挖矿节点（至少需要一半的节点提名才行）。
 
 ## 踩坑
 

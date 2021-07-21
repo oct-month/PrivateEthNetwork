@@ -33,6 +33,7 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+      - eth-miner1
 
   eth-miner3:
     build:
@@ -43,6 +44,7 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+      - eth-miner2
 
   eth-member1:
     build:
@@ -53,6 +55,7 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+      - eth-miner3
 
   eth-member2:
     build:
@@ -63,3 +66,4 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+      - eth-member1
