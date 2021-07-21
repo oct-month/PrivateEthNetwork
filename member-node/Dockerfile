@@ -24,6 +24,7 @@ ARG workdir=/geth-node
 WORKDIR ${workdir}
 
 COPY member-node/ ${workdir}/
+RUN sed -i 's/\r$//' *.sh
 
 EXPOSE 8545 8546 30303 30303/udp
 
