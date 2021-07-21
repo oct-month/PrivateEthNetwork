@@ -6,12 +6,12 @@ networks:
     external: false
 
 services:
-  eth-bootnode:
+  eth-boot:
     build:
       context: ./
-      dockerfile: bootnode/Dockerfile
-    image: sun/bootnode:latest
-    container_name: bootnode
+      dockerfile: boot-node/Dockerfile
+    image: sun/boot-node:latest
+    container_name: boot-node
     restart: on-failure
 
   eth-miner1:
@@ -22,7 +22,7 @@ services:
     container_name: eth-miner1
     restart: on-failure
     depends_on: 
-      - eth-bootnode
+      - eth-boot
 
   eth-miner2:
     build:
@@ -32,7 +32,7 @@ services:
     container_name: eth-miner2
     restart: on-failure
     depends_on: 
-      - eth-bootnode
+      - eth-boot
 
   eth-miner3:
     build:
@@ -42,7 +42,7 @@ services:
     container_name: eth-miner3
     restart: on-failure
     depends_on: 
-      - eth-bootnode
+      - eth-boot
 
   eth-member1:
     build:
@@ -52,7 +52,7 @@ services:
     container_name: eth-member1
     restart: on-failure
     depends_on: 
-      - eth-bootnode
+      - eth-boot
 
   eth-member2:
     build:
@@ -62,4 +62,4 @@ services:
     container_name: eth-member2
     restart: on-failure
     depends_on: 
-      - eth-bootnode
+      - eth-boot

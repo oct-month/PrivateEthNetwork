@@ -19,11 +19,11 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositorie
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /go-ethereum/build/bin/bootnode /usr/local/bin/
 
-ARG workdir=/bootnode
+ARG workdir=/boot-node
 
 WORKDIR ${workdir}
 
-COPY bootnode/boot.key ${workdir}/
+COPY boot-node/boot.key ${workdir}/
 
 EXPOSE 30301 30301/udp
 
