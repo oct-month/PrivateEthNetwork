@@ -1,0 +1,43 @@
+version: '3.8'
+
+networks:
+  default:
+    driver: bridge
+    external: false
+
+services:
+  eth-bootnode:
+    build: ./bootnode/
+    image: sun/bootnode:latest
+    container_name: bootnode
+    restart: on-failure
+
+  eth-miner1:
+    build: ./mining-node1/
+    image: sun/mining-node1:latest
+    container_name: eth-miner1
+    restart: on-failure
+
+  eth-miner2:
+    build: ./mining-node2/
+    image: sun/mining-node2:latest
+    container_name: eth-miner2
+    restart: on-failure
+
+  eth-miner3:
+    build: ./mining-node3/
+    image: sun/mining-node3:latest
+    container_name: eth-miner3
+    restart: on-failure
+
+  eth-member1:
+    build: ./member-node/
+    image: sun/member-node:latest
+    container_name: eth-member1
+    restart: on-failure
+
+  eth-member2:
+    build: ./member-node/
+    image: sun/member-node:latest
+    container_name: eth-member2
+    restart: on-failure
