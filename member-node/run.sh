@@ -1,5 +1,6 @@
 #!/bin/sh
 if [ ! -d "./data/geth" ]; then
+    echo -e "\n\n" | geth account new
     geth init --datadir data genesis.json
 fi
 geth \
