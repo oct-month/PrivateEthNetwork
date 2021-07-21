@@ -11,7 +11,7 @@ services:
       context: ./
       dockerfile: boot-node/Dockerfile
     image: sun/boot-node:latest
-    container_name: boot-node
+    container_name: eth-boot
     restart: on-failure
 
   eth-miner1:
