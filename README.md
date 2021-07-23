@@ -12,7 +12,7 @@ docker-compose up -d --build
 
 ### 网络结构
 
-本网络共有6个节点：
+本区块链网络共有6个节点：
 
 - 1个`boot-node`，即启动节点，用于对等网络发现
 - 3个`mining-node`，即挖矿节点
@@ -38,6 +38,12 @@ clique.propose('0x地址', true)
 
 以提名新的挖矿节点（至少需要一半的节点提名才行）。
 
+## 监控
+
+除了以太坊网络，还部署了`Ethereum Network Status`页面以可视化展现网络状态。
+
+部署好之后，打开 http://localhost:3000 即可查看。
+
 ## 踩坑
 
 - `win10`和`Linux`的换行符不同，`win10`是`\r\n`，`Linux`是`\n`。
@@ -50,6 +56,13 @@ clique.propose('0x地址', true)
 
 ## 参考资料
 
-- https://github.com/ethereum/go-ethereum
+- https://github.com/ethereum/go-ethereum/blob/master/README.md
 - https://geth.ethereum.org/docs/interface/managing-your-accounts
 - https://luckylh.github.io/post/ethereum-puppeth-to-create-private-chain/
+- https://medium.com/coinmonks/how-to-build-ethereum-dashboard-and-to-monitor-your-ethereum-network-status-9f1941beac08
+
+## 使用的其它代码
+
+- https://github.com/ethereum/go-ethereum
+- https://github.com/ethereum/eth-net-intelligence-api
+- https://github.com/ethereum/eth-netstats

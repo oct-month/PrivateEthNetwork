@@ -67,3 +67,21 @@ services:
     depends_on: 
       - eth-boot
       - eth-member1
+
+  eth-netstat-api:
+    build: ./eth-net-intelligence-api
+    image: sun/netstat-api-node:latest
+    container_name: eth-netstat-api
+    restart: on-failure
+    depends_on: 
+      - eth-member1
+  
+  eth-netstat:
+    build: ./eth-netstats
+    image: sun/netstat-node:latest
+    container_name: eth-netstat
+    restart: on-failure
+    depends_on: 
+      - eth-netstat-api
+    ports: 
+      - 3000:3000
