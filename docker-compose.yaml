@@ -68,20 +68,34 @@ services:
       - eth-boot
       - eth-member1
 
-  eth-netstat-api:
+  eth-netstat-api-1:
     build: ./eth-net-intelligence-api
     image: sun/netstat-api-node:latest
-    container_name: eth-netstat-api
+    container_name: eth-netstat-api-1
     restart: on-failure
     depends_on: 
       - eth-member1
-  
+      - eth-netstat
+    environment: 
+      - RPC_HOST=eth-member1
+      - INSTANCE_NAME=eth-netstat-api-1
+
+  eth-netstat-api-2:
+    build: ./eth-net-intelligence-api
+    image: sun/netstat-api-node:latest
+    container_name: eth-netstat-api-2
+    restart: on-failure
+    depends_on: 
+      - eth-member2
+      - eth-netstat
+    environment: 
+      - RPC_HOST=eth-member2
+      - INSTANCE_NAME=eth-netstat-api-2
+
   eth-netstat:
     build: ./eth-netstats
     image: sun/netstat-node:latest
     container_name: eth-netstat
     restart: on-failure
-    depends_on: 
-      - eth-netstat-api
     ports: 
       - 3000:3000

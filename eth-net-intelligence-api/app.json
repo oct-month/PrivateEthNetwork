@@ -11,10 +11,8 @@
     "env":
     {
       "NODE_ENV"        : "production",
-      "RPC_HOST"        : "eth-member1",
       "RPC_PORT"        : "8545",
       "LISTENING_PORT"  : "30303",
-      "INSTANCE_NAME"   : "eth-netstat",
       "CONTACT_DETAILS" : "oct-month@qq.com",
       "WS_SERVER"       : "http://eth-netstat:3000",
       "WS_SECRET"       : "mysecret",
