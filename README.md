@@ -53,6 +53,7 @@ clique.propose('0x地址', true)
 - `Clique`系统中，挖矿节点必须`unlock`账户才能打包区块。
 - `genesis.json`中的`extraData`记录了初始的可记账节点，必须把对应的账户填入。
 - 挖矿节点必须至少存在一个，这样创世区块才能打包，不然会报`Dropping unsynced node during sync`错误。
+- `PoA`共识机制中没有矿工奖励。
 
 ## 参考资料
 
