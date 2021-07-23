@@ -68,29 +68,65 @@ services:
       - eth-boot
       - eth-member1
 
-  eth-netstat-api-1:
+  eth-netstat-member1:
     build: ./eth-net-intelligence-api
     image: sun/netstat-api-node:latest
-    container_name: eth-netstat-api-1
+    container_name: eth-netstat-member1
     restart: on-failure
     depends_on: 
       - eth-member1
       - eth-netstat
     environment: 
       - RPC_HOST=eth-member1
-      - INSTANCE_NAME=eth-netstat-api-1
+      - INSTANCE_NAME=eth-member1
 
-  eth-netstat-api-2:
+  eth-netstat-member2:
     build: ./eth-net-intelligence-api
     image: sun/netstat-api-node:latest
-    container_name: eth-netstat-api-2
+    container_name: eth-netstat-member2
     restart: on-failure
     depends_on: 
       - eth-member2
       - eth-netstat
     environment: 
       - RPC_HOST=eth-member2
-      - INSTANCE_NAME=eth-netstat-api-2
+      - INSTANCE_NAME=eth-member2
+
+  eth-netstat-miner1:
+    build: ./eth-net-intelligence-api
+    image: sun/netstat-api-node:latest
+    container_name: eth-netstat-miner1
+    restart: on-failure
+    depends_on: 
+      - eth-miner1
+      - eth-netstat
+    environment: 
+      - RPC_HOST=eth-miner1
+      - INSTANCE_NAME=eth-miner1
+
+  eth-netstat-miner2:
+    build: ./eth-net-intelligence-api
+    image: sun/netstat-api-node:latest
+    container_name: eth-netstat-miner2
+    restart: on-failure
+    depends_on: 
+      - eth-miner2
+      - eth-netstat
+    environment: 
+      - RPC_HOST=eth-miner2
+      - INSTANCE_NAME=eth-miner2
+
+  eth-netstat-miner3:
+    build: ./eth-net-intelligence-api
+    image: sun/netstat-api-node:latest
+    container_name: eth-netstat-miner3
+    restart: on-failure
+    depends_on: 
+      - eth-miner3
+      - eth-netstat
+    environment: 
+      - RPC_HOST=eth-miner3
+      - INSTANCE_NAME=eth-miner3
 
   eth-netstat:
     build: ./eth-netstats

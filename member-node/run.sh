@@ -12,7 +12,7 @@ geth \
     --rpc \
     --rpcport "8545" \
     --rpcaddr "0.0.0.0" \
-    --rpcapi "db,eth,web3,personal,net" \
+    --rpcapi "eth,web3,net" \
     --rpccorsdomain "*" \
     --rpcvhosts="*" \
     --nat "any"

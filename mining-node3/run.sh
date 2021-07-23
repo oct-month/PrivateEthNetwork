@@ -6,4 +6,13 @@ echo -e "\n" | geth \
     --unlock 0x3FC6fc17Efa2932884f035533D2CD72eC5119482 \
     --mine \
     --miner.threads=1 \
-    --miner.etherbase=0x3FC6fc17Efa2932884f035533D2CD72eC5119482
+    --miner.etherbase=0x3FC6fc17Efa2932884f035533D2CD72eC5119482 \
+    --port "30303" \
+    --rpc \
+    --rpcport "8545" \
+    --rpcaddr "0.0.0.0" \
+    --rpcapi "eth,web3,net" \
+    --rpccorsdomain "*" \
+    --rpcvhosts="*" \
+    --nat "any" \
+    --allow-insecure-unlock
