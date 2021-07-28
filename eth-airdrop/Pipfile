@@ -1,0 +1,13 @@
+[[source]]
+url = "https://mirrors.bfsu.edu.cn/pypi/web/simple"
+verify_ssl = true
+name = "custom"
+
+[packages]
+flask = "*"
+web3 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

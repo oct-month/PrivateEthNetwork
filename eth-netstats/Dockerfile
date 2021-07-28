@@ -10,6 +10,7 @@ RUN npm install \
   && npm install -g grunt-cli \
   && grunt
 
+ENV PORT 3000
 ENV WS_SECRET="mysecret"
 
 EXPOSE  3000

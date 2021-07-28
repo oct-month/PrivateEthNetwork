@@ -56,6 +56,8 @@ services:
     depends_on: 
       - eth-boot
       - eth-miner3
+    ports: 
+      - 8545:8545
 
   eth-member2:
     build:
@@ -133,5 +135,19 @@ services:
     image: sun/netstat-node:latest
     container_name: eth-netstat
     restart: on-failure
+    ports: 
+      - 8080:3000
+
+  eth-airdrop:
+    build:
+      context: ./
+      dockerfile: eth-airdrop/Dockerfile
+    image: sun/eth-airdrop:latest
+    container_name: eth-airdrop
+    restart: on-failure
+    depends_on: 
+      - eth-miner1
+      - eth-miner2
+      - eth-miner3
     ports: 
       - 3000:3000

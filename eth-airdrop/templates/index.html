@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eth空投</title>
+    <style type="text/css">
+        /* 标题样式 */
+        h2 {
+            padding: 0px 20px;
+            border-left: 10px solid #BF51ED91;
+            background-color: rgba(208, 208, 208, 0);
+            font-size: 18px;
+            line-height: 30px;
+            color: cornflowerblue;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        /*表格样式*/
+        table {
+            width: 90%;
+            background: #ccc;
+            margin: 10px auto;
+            border-collapse: collapse;
+            /*border-collapse:collapse合并内外边距(去除表格单元格默认的2个像素内外边距*/
+        }
+
+        th,
+        td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #eee;
+            font-weight: normal;
+        }
+
+        tr {
+            background: #fff;
+        }
+
+        tr:hover {
+            background: #cc0;
+        }
+
+        td a {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>获取Eth空投</h2>
+    <label for="address">地址</label>
+    <input type="text" id="address" name="address" value="0x" required/>
+    <input type="button" id="submit" value="获取" onclick="get_eth()"/>
+</body>
+
+<script>
+    function get_eth()
+    {
+        address = document.getElementById("address").value.trim()
+        window.location.replace("/eth/" + address)
+    }
+</script>
+</html>
