@@ -42,7 +42,7 @@ clique.propose('0x地址', true)
 
 除了以太坊网络，还部署了`Ethereum Network Status`页面以可视化展现网络状态。
 
-部署好之后，打开 http://localhost:3000 即可查看。
+部署好之后，打开 http://localhost:8080 即可查看。
 
 ## 踩坑
 
