@@ -9,10 +9,10 @@ geth \
     --networkid=201807247 \
     --syncmode "full" \
     --port "30303" \
-    --rpc \
-    --rpcport "8545" \
-    --rpcaddr "0.0.0.0" \
-    --rpcapi "eth,web3,net" \
-    --rpccorsdomain "*" \
-    --rpcvhosts="*" \
+    --http \
+    --http.port "8545" \
+    --http.addr "0.0.0.0" \
+    --http.api "eth,web3,net" \
+    --http.corsdomain "*" \
+    --http.vhosts="*" \
     --nat "any"

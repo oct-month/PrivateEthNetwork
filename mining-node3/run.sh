@@ -8,11 +8,11 @@ echo -e "\n" | geth \
     --miner.threads=1 \
     --miner.etherbase=0x3FC6fc17Efa2932884f035533D2CD72eC5119482 \
     --port "30303" \
-    --rpc \
-    --rpcport "8545" \
-    --rpcaddr "0.0.0.0" \
-    --rpcapi "eth,web3,net" \
-    --rpccorsdomain "*" \
-    --rpcvhosts="*" \
+    --http \
+    --http.port "8545" \
+    --http.addr "0.0.0.0" \
+    --http.api "eth,web3,net" \
+    --http.corsdomain "*" \
+    --http.vhosts="*" \
     --nat "any" \
     --allow-insecure-unlock

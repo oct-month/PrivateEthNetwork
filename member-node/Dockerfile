@@ -1,23 +1,8 @@
-# 编译
-FROM golang:1.16-alpine as builder
-
-ENV GO111MODULE on
-ENV GOPROXY https://goproxy.cn
-
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
-RUN apk add --no-cache gcc musl-dev linux-headers git
-
-WORKDIR /go-ethereum
-
-COPY go-ethereum-1.10.5/ /go-ethereum/
-RUN go run build/ci.go install ./cmd/geth
-
-# 生成镜像
 FROM alpine:latest
+LABEL maintainer="ablocker oct-month@qq.com"
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
-RUN apk add --no-cache ca-certificates
-COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
+
+COPY --from=ablocker/geth:1.10.18 /usr/local/bin/geth /usr/local/bin/
 
 ARG workdir=/geth-node
 
@@ -29,5 +14,3 @@ RUN sed -i 's/\r$//' *.sh
 EXPOSE 8545 8546 30303 30303/udp
 
 ENTRYPOINT ["sh", "run.sh"]
-
-LABEL maintainer="sun oct-month@qq.com"

@@ -123,7 +123,8 @@ angular.module('netStatsApp.filters', [])
 			unit = 'T';
 		}
 
-		return result.toFixed(2) + ' ' + unit + 'H';
+		// return result.toFixed(2) + ' ' + unit + 'H';
+		return parseFloat(result).toFixed(2) + ' ' + unit + 'H';
 	};
 })
 .filter('nodeVersion', function($sce) {
