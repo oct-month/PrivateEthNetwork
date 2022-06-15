@@ -47,9 +47,13 @@ clique.propose('0x地址', true)
 
 部署好之后，打开 http://localhost:8080 即可查看。
 
+![ens](.img/ens.png)
+
 ## 水管
 
 为测试使用，部署`ETH`空投，地址为：http://localhost:3000
+
+![airdrop](.img/air.png)
 
 ## 踩坑
 
