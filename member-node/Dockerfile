@@ -2,7 +2,7 @@ FROM alpine:latest
 LABEL maintainer="ablocker oct-month@qq.com"
 
 
-COPY --from=ablocker/geth:1.10.18 /usr/local/bin/geth /usr/local/bin/
+COPY --from=ablocker/geth:1.10.26 /usr/local/bin/geth /usr/local/bin/
 
 ARG workdir=/geth-node
 

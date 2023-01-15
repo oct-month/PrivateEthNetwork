@@ -1,0 +1,4 @@
+[core]
+	ignorecase = false
+	autocrlf = input
+	safecrlf = true

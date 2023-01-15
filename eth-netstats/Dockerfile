@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node:lts-alpine
 LABEL maintainer="sun oct-month@qq.com"
 
 # RUN npm config set registry https://registry.npm.taobao.org

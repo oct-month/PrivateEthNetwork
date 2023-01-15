@@ -3,8 +3,8 @@
 ## 部署
 
 ```sh
-cd go-ethereum-1.10.18
-sh build.sh
+cd go-ethereum-1.10.26
+docker build . -t ablocker/geth:1.10.26
 cd ..
 docker-compose up -d --build
 ```

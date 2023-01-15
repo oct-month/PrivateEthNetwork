@@ -1,6 +1,6 @@
 import os
 
-EXPORT = ['go-ethereum-1.10.18', '.git', '.mypy_cache', '.vscode']
+EXPORT = ['go-ethereum-1.10.26', '.git', '.mypy_cache', '.vscode']
 
 def search_dir(path: str) -> None:
     for ex in EXPORT:

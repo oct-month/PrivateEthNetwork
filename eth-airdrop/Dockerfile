@@ -1,12 +1,12 @@
 
-FROM python:3.8-alpine
+FROM python:3.10-alpine
 LABEL maintainer="ablocker oct-month@qq.com"
 
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories
 RUN apk add --no-cache gcc musl-dev
 
-COPY --from=ablocker/geth:1.10.18 /usr/local/bin/geth /usr/local/bin/
+COPY --from=ablocker/geth:1.10.26 /usr/local/bin/geth /usr/local/bin/
 
 WORKDIR /eth-airdrop
 
