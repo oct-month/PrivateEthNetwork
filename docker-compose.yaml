@@ -23,6 +23,8 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+    ports:
+      - "8545:8545"
 
   eth-miner2:
     build:
@@ -33,6 +35,7 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+      - eth-miner1
 
   eth-miner3:
     build:
@@ -43,6 +46,7 @@ services:
     restart: on-failure
     depends_on: 
       - eth-boot
+      - eth-miner1
 
   eth-member1:
     build:
@@ -125,8 +129,6 @@ services:
     environment: 
       - RPC_HOST=eth-miner3
       - INSTANCE_NAME=eth-miner3
-    ports:
-      - "8545:8545"
 
   eth-netstat:
     build: ./eth-netstats

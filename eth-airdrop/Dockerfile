@@ -10,9 +10,10 @@ COPY --from=ablocker/geth:1.10.26 /usr/local/bin/geth /usr/local/bin/
 
 WORKDIR /eth-airdrop
 
-COPY eth-airdrop/ /eth-airdrop/
-
+COPY eth-airdrop/requirements.txt /eth-airdrop/
 RUN pip install -r requirements.txt -i https://mirrors.bfsu.edu.cn/pypi/web/simple
+
+COPY ./eth-airdrop /eth-airdrop/
 
 EXPOSE 3000
 

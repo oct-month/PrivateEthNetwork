@@ -62,7 +62,7 @@
 <body>
     <h2>获取Eth空投</h2>
     <label for="address">地址</label>
-    <input type="text" id="address" name="address" value="0x" required/>
+    <input type="text" id="address" name="address" placeholder="0x" required/>
     <input type="button" id="submit" value="获取" onclick="get_eth()"/>
 </body>
 
@@ -70,7 +70,8 @@
     function get_eth()
     {
         address = document.getElementById("address").value.trim()
-        window.location.replace("/eth/" + address)
+        window.location.href = "/eth/" + address
+        // window.location.replace("/eth/" + address)
     }
 </script>
 </html>

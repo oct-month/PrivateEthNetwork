@@ -18,6 +18,7 @@ def get_eth(address: str):
             'address': address,
             'tx_id': tx_id
         }
+        # print(context)
         return render_template('eth.html', context=context)
     else:
         context = {

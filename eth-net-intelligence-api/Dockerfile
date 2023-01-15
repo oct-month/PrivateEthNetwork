@@ -9,14 +9,15 @@ RUN apk update && \
 
 USER root
 
-COPY . /root/eth-net-intelligence-api/
-
 WORKDIR /root/eth-net-intelligence-api
 
+RUN npm install -g pm2
+COPY ./package.json /root/eth-net-intelligence-api/
+COPY ./package-lock.json /root/eth-net-intelligence-api/
+RUN npm install
+
+COPY . /root/eth-net-intelligence-api/
 RUN sed -i 's/\r$//' *.sh
 RUN chmod a+x *.sh
-
-RUN npm install \
-  && npm install -g pm2
 
 ENTRYPOINT ["./run.sh"]
